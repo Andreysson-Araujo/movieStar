@@ -49,6 +49,7 @@ require_once("templates/header.php")
                         <input type="password" class="form-control" id="confirmpassword" name="confirmpassword"
                             placeholder="Digite sua senha">
                     </div>
+                    <input type="submit" class="btn card-btn" value="Registrar">
                 </form>
             </div>
         </div>
