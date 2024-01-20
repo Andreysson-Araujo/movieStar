@@ -31,9 +31,14 @@
     box-shadow: none;
 }
 
-#navbar-nav {
+.navbar-nav {
     justify-content: flex-end;
     width: 100%;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #FFF;
+    transition: .5s;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
