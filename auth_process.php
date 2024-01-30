@@ -6,6 +6,7 @@ require_once("db.php");
 require_once("models/User.php");
 require_once("dao/UserDAO.php");
 require_once("models/Message.php");
+require_once("models/User.php");
 
 //require_once("templates/header.php");
 $message = new Message($BASE_URL);
@@ -32,7 +33,20 @@ if($type == "register") {
       //Verificar se o e-mail ja esta cadastrado no sistema
       if($userDao->findyByEmail($email) === false) {
 
-        echo "nenhum usuario foi encontrado";
+       $user = new User();
+
+       $userToken = $user->generateToken();
+       $finalPassword = $user->generatePassword($password);
+
+       $user->name = $name;
+       $user->lastname = $lastname;
+       $user->email = $email;
+       $user->password = $finalPassword;
+       $user->token = $userToken;
+
+       $auth = true;
+
+       $userDao->create($user, $auth);
 
       } else {
 
