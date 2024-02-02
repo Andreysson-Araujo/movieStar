@@ -28,6 +28,7 @@
     public function authenticateUser($email, $password);
     public function findyByEmail($email);
     public function findyById($id);
+    public function destroyToken();
     public function changePassword(User $user);
 
   }
