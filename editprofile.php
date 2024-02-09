@@ -19,8 +19,9 @@ if ($userData->image == "") {
 ?>
 <div id="main-container" class="container-fluid">
     <div class="col-md-12">
-        <form action="<?= $BASE_URL ?>user_process.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="type" value="update">
+
+        <form action="<?= $BASE_URL ?>user_process.php" method="POST" enctype="multipart/form-data"> <input type="hidden"
+                name="type" value="update">
             <div class="row">
                 <div class="col-md-4">
                     <h1>
@@ -42,22 +43,24 @@ if ($userData->image == "") {
                         <input type="text" readonly class="form-control disabled" id="email" name="email"
                             placeholder="Digite o seu email" value="<?= $userData->email ?>">
                     </div>
-                    <input type="submit" class="btn form-btn" value="Alterar">
+                    <input type="submit" class="btn card-btn" value="Alterar">
                 </div>
                 <div class="col-md-4">
                     <div id="profile-image-container"
-                        style="background-imag:url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')"></div>
+                        style="background-image:url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Foto</label>
+                        <input type="file" class="form-control-file" name="image">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Sobre você:</label>
+                        <textarea class="form-control" name="bio" id="bio" rows="5"
+                            placeholder="conte sobre você"><?= $userData->bio ?></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="image">Foto: </label>
-                    <input type="file" class="form-control-file" name="image">
-                </div>
-                <div class="form-group">
-                    <label for="bio">Sobre você: </label>
-                    <textarea class="form-control" name="bio" id="bio" rows="5"
-                        placeholder="Fale um pouco sobre você"><?= $userData->bio ?></textarea>
-                </div>
-            </div>
         </form>
     </div>
 </div>
