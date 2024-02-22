@@ -126,6 +126,25 @@
     background-position: center;
     margin: 15px auto;
 }
+.page-description {
+    color: #888;
+}
+
+#bio {
+    max-width: 25rem;
+}
+
+#change-password-container {
+    margin-top: 1.875rem;
+}
+
+.edit-profile-page .card-btn{
+    width: auto;
+}
+
+.form-control.disable{
+    background-color: #999;
+}
 
 
 /* FOOTER */
