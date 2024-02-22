@@ -116,6 +116,16 @@
     border-color: #f5c518;
 }
 
+/* Edit Profile */
+#profile-image-container {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #f5c518;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
 
 
 /* FOOTER */
