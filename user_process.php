@@ -35,6 +35,37 @@ if($type === "update") {
   $userData->email = $email;
   $userData->bio = $bio;
 
+  //Upçpad da imagem
+  if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+    
+    $image = $_FILES["image"];
+    $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+    $jpgArray = ["image/jpeg", "image/jpg"];
+
+    //Checagem de tipo de imagem
+    if(in_array($image["type"], $imageTypes)) {
+
+      if(in_array($image, [])){
+
+        $imageFile = imagecreatefromjpeg(($image["tmp_name"]));
+
+        //image  'png
+      }else {
+        $imageFile = imagecreatefrompng(($image["tmp_name"]));
+      }
+
+      $imageName = $user->imageGenerateName();
+
+      imagejpeg($imageFile, "./img/users/". $imageName, 100);
+
+      $userData->image = $imageName;
+
+    }else {
+      $message->setMessage("Imagem com tipo invalido!", "error", "back");
+
+    }
+  }
+
   $userDao->update($userData);
 
 
