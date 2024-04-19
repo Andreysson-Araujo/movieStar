@@ -204,7 +204,7 @@
       $this->message->setMessage("Você deslogou com sucesso!", "success", "index.php");
     }
 
-    public function changePassword(User $user) {
+    public function changePassword($user) {
 
       $stmt = $this->conn->prepare("UPDATE users SET 
         password = :password
@@ -215,8 +215,9 @@
       $stmt->bindParam(":id", $user->id);
 
       $stmt->execute();
-
-      //Redirecionar e apresentar a mensagem de sucesso
-      $this->message->setMessage("Senha alterada com sucesso!", "success", "editprofile.php");
+        
+      // Redireciona e apresenta mensagem de sucesso
+      $this->message->setMessage("Senha atualizada!", "success", "editprofile.php");
+      
     }
   }
