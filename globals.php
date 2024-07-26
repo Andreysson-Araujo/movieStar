@@ -1,6 +1,6 @@
 <?php
 
-    //echo "Executando globals.php";
+ //echo "Executando globals.php";
 
     session_start();
 
